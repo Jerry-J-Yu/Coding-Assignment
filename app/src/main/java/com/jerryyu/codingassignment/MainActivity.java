@@ -18,6 +18,7 @@
 
 package com.jerryyu.codingassignment;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,6 +37,7 @@ import com.google.android.gms.location.places.PlaceBuffer;
 import com.google.android.gms.location.places.Places;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.jerryyu.codingassignment.presenters.PlaceAutocompleteAdapter;
 
 public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     protected GoogleApiClient googleApiClient;
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         autoCompleteTextView.setAdapter(placeAutocompleteAdapter);
 
         // Set up the "Clear Text" button that clears the text in the autocomplete view
-        Button clearButton = (Button) findViewById(R.id.clearButton);
+        clearButton = (Button) findViewById(R.id.clearButton);
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,8 +132,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
             // Get the Place object from the buffer.
             final Place place = places.get(0);
 
-            Toast.makeText(getApplicationContext(), place.getId() + ", " + place.getName(),
-                    Toast.LENGTH_SHORT).show();
+            // Send the place's ID to the PlaceDetailsActivity
+            Intent intent = new Intent(getApplicationContext(), PlaceDetailsActivity.class);
+            intent.putExtra(PlaceDetailsActivity.KEY_PLACE_ID, place.getId());
+            startActivity(intent);
 
             places.release();
         }

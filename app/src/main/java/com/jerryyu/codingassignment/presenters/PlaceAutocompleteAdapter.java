@@ -16,7 +16,7 @@
  *  limitations under the License.
  */
 
-package com.jerryyu.codingassignment;
+package com.jerryyu.codingassignment.presenters;
 
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.PendingResult;
