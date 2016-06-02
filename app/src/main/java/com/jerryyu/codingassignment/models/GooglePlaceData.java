@@ -1,5 +1,6 @@
-
 package com.jerryyu.codingassignment.models;
+
+// Generated with the help of http://www.jsonschema2pojo.org
 
 import java.util.ArrayList;
 import java.util.List;

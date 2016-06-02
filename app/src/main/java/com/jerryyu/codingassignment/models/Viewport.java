@@ -1,5 +1,6 @@
-
 package com.jerryyu.codingassignment.models;
+
+// Generated with the help of http://www.jsonschema2pojo.org
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
