@@ -5,4 +5,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="clearButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">#c5cae9</item>
+        <item name="colorButtonNormal">#3f51b5</item>
+    </style>
+
 </resources>
