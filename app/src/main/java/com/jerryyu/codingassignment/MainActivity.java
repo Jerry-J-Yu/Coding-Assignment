@@ -18,9 +18,14 @@
 
 package com.jerryyu.codingassignment;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
@@ -80,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 autoCompleteTextView.setText("");
             }
         });
+
+        // Make the action bar conform to material design
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+        supportActionBar.setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this, R.color.primary)));
+        supportActionBar.setTitle(Html.fromHtml("<font color='#FFFFFF'>Coding Assignment</font>"));
     }
 
     /**
